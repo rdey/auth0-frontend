@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/dist/app.css" />
+</head>
+<body>
+
+  <script src="https://cdn.auth0.com/js/lock/10.20/lock.min.js"></script>
+  <script>
+    var lock = new Auth0Lock('0h5K5VT0kJ6Zj5kBh5pF46YuPlBaziXR', 'redeye.eu.auth0.com', {
+      auth: {
+        redirectUrl: 'http://localhost:3000/callback',
+        responseType: 'code',
+        params: {
+          scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes
+        }
+      }
+    });
+  </script>
+  <button onclick="lock.show();">Login</button>
+
+</body>
+</html>

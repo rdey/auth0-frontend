@@ -1,0 +1,25 @@
+{
+  "name": "auth0-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdey/auth0-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rdey/auth0-frontend/issues"
+  },
+  "homepage": "https://github.com/rdey/auth0-frontend#readme",
+  "dependencies": {
+    "express": "^4.16.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0"
+  }
+}
