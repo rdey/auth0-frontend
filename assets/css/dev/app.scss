@@ -20,6 +20,7 @@ body {
   $color-rdey:           #FC6F77;
 
   font-family: "Libre Franklin", sans-serif;
+  font-weight: 400;
 
 
   // remove border radius
@@ -53,6 +54,12 @@ body {
 
     &:hover { color: $color-white; }
   }
+  .auth0-lock-back-button {
+    &:hover {
+      border-color: $color-grey--light;
+      background-color: $color-grey--light;
+    }
+  }
 
 
   // header
@@ -71,6 +78,12 @@ body {
     .auth0-lock-name { display: none; }
 
 
+  // global message
+
+  .auth0-global-message {
+  }
+
+
   // tabs
 
   .auth0-lock-tabs {
@@ -80,6 +93,8 @@ body {
       a {
         font-weight: 400;
         color: $color-grey--light;
+
+        &:hover { color: $color-white; }
       }
 
       &.auth0-lock-tabs-current {
@@ -141,6 +156,9 @@ body {
 
   // submit button
 
+  .auth0-lock-submit {
+    font-weight: 600;
+  }
   &.auth0-lock-mode-loading .auth0-lock-submit {
     background: $color-rdey !important;
   }
