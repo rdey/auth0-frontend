@@ -29,7 +29,9 @@ body {
     border-color: #999999;
     background-color: #999999; }
   .auth0-lock.auth0-lock.auth0-lock .auth0-lock-header {
-    height: auto; }
+    height: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem; }
   .auth0-lock.auth0-lock.auth0-lock .auth0-lock-header-bg {
     display: none; }
   .auth0-lock.auth0-lock.auth0-lock .auth0-lock-header-logo {
