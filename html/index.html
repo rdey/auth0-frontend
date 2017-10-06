@@ -1,21 +1,39 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="/css/dist/app.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Franklin:400&subset=latin-ext" />
+  <link rel="stylesheet" href="/assets/css/dist/app.css" />
 </head>
 <body>
 
   <script src="https://cdn.auth0.com/js/lock/10.20/lock.min.js"></script>
   <script>
-    var lock = new Auth0Lock('0h5K5VT0kJ6Zj5kBh5pF46YuPlBaziXR', 'redeye.eu.auth0.com', {
+    var lock = new Auth0Lock('0h5K5VT0kJ6Zj5kBh5pF46YuPlBaziXR', 'redeye.eu.auth0.com',
+    {
       auth: {
         redirectUrl: 'http://localhost:3000/callback',
         responseType: 'code',
         params: {
           scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes
         }
+      },
+      theme: {
+        logo: '/assets/img/logo.svg',
+        primaryColor: '#FC6F77'
       }
     });
+    lock.show();
+
+    // removes dev info bar (comment out the code below in production use)
+    // (function() {
+    //   var interval = setInterval(function() {
+    //     var el = document.querySelector('#auth0-lock-style');
+    //     if(el) {
+    //       el.parentNode.removeChild(el);
+    //       clearInterval(interval);
+    //     }
+    //   }, 500);
+    // })();
   </script>
   <button onclick="lock.show();">Login</button>
 

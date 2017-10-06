@@ -1,0 +1,152 @@
+body {
+  background-color: beige;
+}
+
+
+
+/*
+  AUTH0 LOCK
+*/
+
+.auth0-lock.auth0-lock.auth0-lock {
+
+  $color-black:          #2A2A2A;
+  $color-grey--dark:     #4A4A4A;
+  $color-grey:           #646464;
+  $color-grey--light:    #999999;
+  $color-grey--lighter:  #D8D8D8;
+  $color-grey--lightest: #E5E5E5;
+  $color-white:          #FFF;
+  $color-rdey:           #FC6F77;
+
+  font-family: "Libre Franklin", sans-serif;
+
+
+  // remove border radius
+
+  .auth0-lock-cred-pane,
+  .auth0-lock-widget,
+  .auth0-lock-header,
+  .auth0-lock-submit {
+    border-radius: 0;
+  }
+
+
+  // set background color
+  .auth0-lock-widget-container {
+    background-color: $color-black;
+  }
+  .auth0-lock-body-content,
+  .auth0-lock-cred-pane,
+  .auth0-lock-header,
+  .auth0-lock-tabs {
+    background-color: transparent !important;
+  }
+
+
+  // close, back buttons
+
+  .auth0-lock-close-button {
+    color: $color-grey--light;
+    border-color: currentColor;
+    background-color: currentColor;
+
+    &:hover { color: $color-white; }
+  }
+
+
+  // header
+
+  .auth0-lock-header {
+    height: auto;
+  }
+    .auth0-lock-header-bg {
+      display: none;
+    }
+    .auth0-lock-header-logo {
+      width: 60%;
+      height: 50px;
+      margin: 0;
+    }
+    .auth0-lock-name { display: none; }
+
+
+  // tabs
+
+  .auth0-lock-tabs {
+    box-shadow: 0 2px 0 0 $color-grey;
+
+    li {
+      a {
+        font-weight: 400;
+        color: $color-grey--light;
+      }
+
+      &.auth0-lock-tabs-current {
+        box-shadow: 0 2px 0 0 $color-rdey;
+        a {
+          color: $color-white;
+        }
+      }
+    }
+  }
+
+
+  // form
+
+  .auth0-lock-form {
+
+    p {
+      color: $color-grey--lighter;
+    }
+
+    // reset password link
+    .auth0-lock-alternative .auth0-lock-alternative-link {
+      color: $color-grey--lighter;
+
+      &:hover { color: $color-white; }
+    }
+  }
+
+
+  // inputs
+
+  .auth0-lock-input-wrap {
+    background-color: $color-grey;
+    border-width: 0;
+    border-radius: 0;
+
+    .auth0-lock-icon {
+      path {
+        fill: $color-grey--lighter;
+      }
+    }
+
+    .auth0-lock-input {
+      color: $color-white;
+      background-color: $color-grey--dark;
+      border-radius: 0;
+
+      @mixin this-placeholder {
+        color: $color-grey--lighter;
+        opacity: 1;
+      }
+
+      &::placeholder               { @include this-placeholder; }
+      &::-webkit-input-placeholder { @include this-placeholder; }
+      &:-ms-input-placeholder      { @include this-placeholder; }
+    }
+  }
+
+
+  // submit button
+
+  &.auth0-lock-mode-loading .auth0-lock-submit {
+    background: $color-rdey !important;
+  }
+
+
+  .auth0-loading-container .auth0-loading {
+    border-color: rgba($color-white, .4) rgba($color-white, .4) rgba($color-white, .2) rgba($color-white, .2);
+  }
+}
