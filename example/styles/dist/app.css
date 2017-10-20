@@ -1,9 +1,3 @@
-body {
-  background-color: beige; }
-
-/*
-  AUTH0 LOCK
-*/
 .auth0-lock.auth0-lock.auth0-lock {
   font-family: "Libre Franklin", sans-serif;
   font-weight: 400; }
@@ -82,3 +76,6 @@ body {
     background: #FC6F77 !important; }
   .auth0-lock.auth0-lock.auth0-lock .auth0-loading-container .auth0-loading {
     border-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.2); }
+
+body {
+  background-color: beige; }
