@@ -71,7 +71,8 @@
         color: #D8D8D8;
         opacity: 1; }
   .auth0-lock.auth0-lock.auth0-lock .auth0-lock-submit {
-    font-weight: 600; }
+    font-weight: 600;
+    text-align: center; }
   .auth0-lock.auth0-lock.auth0-lock.auth0-lock-mode-loading .auth0-lock-submit {
     background: #FC6F77 !important; }
   .auth0-lock.auth0-lock.auth0-lock .auth0-loading-container .auth0-loading {
