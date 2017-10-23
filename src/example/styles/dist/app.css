@@ -1,3 +1,6 @@
+* {
+  outline: 1; }
+
 .auth0-lock.auth0-lock.auth0-lock {
   font-family: "Libre Franklin", sans-serif;
   font-weight: 400; }

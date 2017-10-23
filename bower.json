@@ -1,18 +1,11 @@
 {
   "name": "auth0-frontend",
-  "description": "",
-  "main": "index.js",
-  "authors": [
-    "Redeye"
-  ],
-  "license": "ISC",
-  "homepage": "https://github.com/rdey/auth0-frontend",
+  "version": "1.0.0",
+  "main": "src/styles/main.scss",
   "private": true,
   "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    ".gitignore",
+    "bower.json",
+    "README.md"
   ]
 }
