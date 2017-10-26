@@ -24,6 +24,7 @@
     background-color: #999999; }
   .auth0-lock.auth0-lock.auth0-lock .auth0-lock-header {
     height: auto;
+    color: #FFF;
     padding-top: 2rem;
     padding-bottom: 2rem; }
   .auth0-lock.auth0-lock.auth0-lock .auth0-lock-header-bg {
@@ -71,8 +72,12 @@
         color: #D8D8D8;
         opacity: 1; }
   .auth0-lock.auth0-lock.auth0-lock .auth0-lock-submit {
-    font-weight: 600;
+    height: 55px;
+    font-weight: 700;
     text-align: center; }
+    .auth0-lock.auth0-lock.auth0-lock .auth0-lock-submit .auth0-label-submit {
+      height: 20px;
+      line-height: 20px; }
   .auth0-lock.auth0-lock.auth0-lock.auth0-lock-mode-loading .auth0-lock-submit {
     background: #FC6F77 !important; }
   .auth0-lock.auth0-lock.auth0-lock .auth0-loading-container .auth0-loading {

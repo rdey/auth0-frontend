@@ -1,11 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,600&subset=latin-ext" />
+  <title>Example</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,700&subset=latin-ext" />
   <link rel="stylesheet" href="/styles/dist/app.css" />
 </head>
 <body>
 
+  <button onclick="lock.show();">Login</button>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdn.auth0.com/js/lock/10.20/lock.min.js"></script>
   <script>
     var lock = new Auth0Lock('0h5K5VT0kJ6Zj5kBh5pF46YuPlBaziXR', 'redeye.eu.auth0.com',
@@ -22,20 +26,9 @@
         primaryColor: '#FC6F77'
       }
     });
-    // lock.show();
 
-    // removes dev info bar (comment out the code below in production use)
-    // (function() {
-    //   var interval = setInterval(function() {
-    //     var el = document.querySelector('#auth0-lock-style');
-    //     if(el) {
-    //       el.parentNode.removeChild(el);
-    //       clearInterval(interval);
-    //     }
-    //   }, 500);
-    // })();
+    lock.show();
   </script>
-  <button onclick="lock.show();">Login</button>
 
 </body>
 </html>
