@@ -3,11 +3,13 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
+var cssmin = require('gulp-cssmin');
 
 gulp.task('sass', function () {
   return gulp.src('./styles/main.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(concat('main.css'))
+    .pipe(cssmin())
     .pipe(gulp.dest('./styles/'));
 });
 
