@@ -9,6 +9,9 @@ app.use('/img', express.static(path.join(__dirname + '/img/')));
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
+app.get('/password', function(req, res) {
+    res.sendFile(path.join(__dirname + '/password.html'));
+});
 
 app.listen(appPort, function(){
   console.log(`Server started at localhost:${appPort}`);

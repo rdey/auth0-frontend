@@ -16,11 +16,11 @@ gulp.task('sass', function () {
 gulp.task('sass-example', function () {
   return gulp.src('./example/styles/dev/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(concat('app.css'))
+    // .pipe(concat('app.css'))
     .pipe(gulp.dest('./example/styles/dist/'));
 });
 
 gulp.task('watch', ['sass', 'sass-example'], function () {
   gulp.watch('./styles/main.scss', ['sass', 'sass-example']);
-  gulp.watch('./assets/css/dev/*.scss', ['sass-example']);
+  gulp.watch('./example/styles/dev/**/*.scss', ['sass-example']);
 });

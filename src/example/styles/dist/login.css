@@ -72,9 +72,12 @@
         color: #D8D8D8;
         opacity: 1; }
   .auth0-lock.auth0-lock.auth0-lock .auth0-lock-submit {
+    font-size: 14px;
     height: 55px;
     font-weight: 700;
-    text-align: center; }
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFF; }
     .auth0-lock.auth0-lock.auth0-lock .auth0-lock-submit .auth0-label-submit {
       height: 20px;
       line-height: 20px; }
@@ -84,4 +87,4 @@
     border-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.2); }
 
 body {
-  background-color: beige; }
+  background: #000 url("/img/bg.jpg") no-repeat center top fixed/cover; }

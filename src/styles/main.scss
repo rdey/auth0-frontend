@@ -24,6 +24,7 @@
 
 
   // set background color
+
   .auth0-lock-widget-container {
     background-color: $color-black;
   }
@@ -150,9 +151,12 @@
   // submit button
 
   .auth0-lock-submit {
+    font-size: 14px;
     height: 55px;
     font-weight: 700;
     text-align: center;
+    text-transform: uppercase;
+    color: $color-white;
 
     .auth0-label-submit {
       height: 20px;
