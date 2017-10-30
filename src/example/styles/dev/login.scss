@@ -1,5 +1,29 @@
 @import '../../../styles/main.scss';
 
+
 body {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 400;
+  color: #fff;
   background: #000 url('/img/bg.jpg') no-repeat center top fixed / cover;
+}
+
+.show-modal-btn {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, .75);
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &:hover {
+    color: #fff;
+  }
+
+  &.is-hidden {
+    display: none;
+  }
 }

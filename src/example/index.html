@@ -7,6 +7,8 @@
 </head>
 <body>
 
+  <button class="show-modal-btn is-hidden">Login&hellip;</button>
+
   <script src="https://cdn.auth0.com/js/lock/10.20/lock.min.js"></script>
   <script>
     var lock = new Auth0Lock('0h5K5VT0kJ6Zj5kBh5pF46YuPlBaziXR', 'redeye.eu.auth0.com',
@@ -32,6 +34,25 @@
       var el = document.querySelector('.auth0-lock-close-button');
       if(el) {
         el.parentNode.removeChild(el);
+      }
+    })();
+
+    // modal box caller button
+    (function() {
+      var el = document.querySelector('.show-modal-btn');
+      if(el) {
+        el.addEventListener('click', function(e) {
+          e.preventDefault();
+          lock.show();
+        });
+
+        lock.on('show', function() {
+          el.classList.add('is-hidden');
+        });
+
+        lock.on('hide', function() {
+          el.classList.remove('is-hidden');
+        });
       }
     })();
   </script>
