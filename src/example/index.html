@@ -1,7 +1,9 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8">
   <title>Login</title>
+  <meta name=viewport content="width=device-width">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,700" />
   <link rel="stylesheet" href="/styles/dist/login.css" />
 </head>
@@ -19,9 +21,6 @@
         params: {
           scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes
         }
-      },
-      prefill: {
-        username: "someone"
       },
       theme: {
         logo: 'https://www.redeye.se/assets/new_assets/images/auth0/logo.svg',
@@ -47,7 +46,7 @@
         el.addEventListener('click', function(e) {
           e.preventDefault();
           lock.show();
-        });
+        }, true);
 
         lock.on('show', function() {
           el.classList.add('is-hidden');
@@ -59,19 +58,33 @@
       }
     })();
 
+    // prevent ios zoom on input focus
     (function() {
-      // lock.on('signin ready', function() {
-      //   setTimeout(function() {
-      //   var el = document.querySelector('.auth0-lock-input[name=username]');
-      //   if(el) {
-      //     el.value = '';
-      //   }
-      // }, 1000);
-      // });
-      lock.on('signup submit', function(a,b) {
-        console.log(a,b);
-      });
+      if(!/iphone|ipod|ipad/i.test(window.navigator.userAgent)) {
+        return;
+      }
+      document.addEventListener('mousedown', function(e) {
+        if(e.target && e.target.classList.contains('auth0-lock-input')) {
+          e.target.classList.add('do-ios-zoom-fix');
+        }
+      }, true);
+      document.addEventListener('blur', function(e) {
+        if(e.target && e.target.classList.contains('auth0-lock-input')) {
+          e.target.classList.remove('do-ios-zoom-fix');
+        }
+      }, true);
     })();
+
+    // (function() {
+    //   lock.on('signin ready', function() {
+    //     setTimeout(function() {
+    //     var el = document.querySelector('.auth0-lock-input[name=username]');
+    //     if(el) {
+    //       el.value = '';
+    //     }
+    //   }, 1000);
+    //   });
+    // })();
   </script>
 
 </body>

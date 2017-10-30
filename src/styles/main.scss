@@ -136,6 +136,10 @@
       background-color: $color-grey--dark;
       border-radius: 0;
 
+      &.do-ios-zoom-fix {
+        font-size: 16px;
+      }
+
       @mixin this-placeholder {
         color: $color-grey--lighter;
         opacity: 1;
