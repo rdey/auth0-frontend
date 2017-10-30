@@ -16,6 +16,7 @@ gulp.task('sass', function () {
 gulp.task('sass-example', function () {
   return gulp.src('./example/styles/dev/*.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(cssmin())
     // .pipe(concat('app.css'))
     .pipe(gulp.dest('./example/styles/dist/'));
 });
