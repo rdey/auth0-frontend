@@ -7,23 +7,3 @@ body {
   color: #fff;
   background: #000 url('https://www.redeye.se/assets/new_assets/images/auth0/bg.jpg') no-repeat center top fixed / cover;
 }
-
-.show-modal-btn {
-  font-size: 1.25rem;
-  color: rgba(255, 255, 255, .75);
-  border: none;
-  background: none;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  &:hover {
-    color: #fff;
-  }
-
-  &.is-hidden {
-    display: none;
-  }
-}
