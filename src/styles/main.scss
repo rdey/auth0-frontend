@@ -146,8 +146,8 @@
       }
 
       &::placeholder               { @include this-placeholder; }
-      &::-webkit-input-placeholder { @include this-placeholder; }
-      &:-ms-input-placeholder      { @include this-placeholder; }
+      // &::-webkit-input-placeholder { @include this-placeholder; }
+      // &:-ms-input-placeholder      { @include this-placeholder; }
     }
   }
 

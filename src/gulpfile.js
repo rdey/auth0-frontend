@@ -4,11 +4,13 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var cssmin = require('gulp-cssmin');
+var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('sass', function () {
   return gulp.src('./styles/main.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(concat('main.css'))
+    // .pipe(concat('main.css'))
+    .pipe(autoprefixer({browsers: ['last 3 versions']}))
     .pipe(cssmin())
     .pipe(gulp.dest('./styles/'));
 });
@@ -16,8 +18,9 @@ gulp.task('sass', function () {
 gulp.task('sass-example', function () {
   return gulp.src('./example/styles/dev/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(cssmin())
     // .pipe(concat('app.css'))
+    .pipe(autoprefixer({browsers: ['last 3 versions']}))
+    .pipe(cssmin())
     .pipe(gulp.dest('./example/styles/dist/'));
 });
 

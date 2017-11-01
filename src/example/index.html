@@ -32,6 +32,17 @@
 
     lock.show();
 
+
+    // apply an anchor on the logo
+    (function() {
+      lock.on('show', function() {
+        var el = document.querySelector('.auth0-lock-header-logo');
+        if(el) {
+          el.outerHTML = '<a href="https://www.redeye.se/" title="Go to homepage" aria-label="Go to homepage">'+el.outerHTML+'</a>'
+        }
+      });
+    })();
+
     // prevent ios zoom on input focus
     (function() {
       if(!/iphone|ipod|ipad/i.test(window.navigator.userAgent)) {
