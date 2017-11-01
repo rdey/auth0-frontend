@@ -196,4 +196,13 @@
   .auth0-loading-container .auth0-loading {
     border-color: rgba($color-white, .4) rgba($color-white, .4) rgba($color-white, .2) rgba($color-white, .2);
   }
+
+
+  // social buttons
+
+  .auth0-lock-social-button {
+    &.auth0-lock-social-big-button[data-provider="auth0"] {
+      background-color: $color-rdey;
+    }
+  }
 }
