@@ -152,6 +152,27 @@
   }
 
 
+  // terms
+
+  .auth0-lock-terms {
+    font-size: 12px;
+    text-align: center;
+    color: $color-grey--light;
+    line-height: 1.5;
+    background-color: transparent;
+    padding: 20px;
+    padding-top: 0;
+
+    a {
+      color: $color-grey--lighter;
+
+      &:hover {
+        color: $color-grey--lightest;
+      }
+    }
+  }
+
+
   // submit button
 
   .auth0-lock-submit {
