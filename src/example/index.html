@@ -20,6 +20,9 @@
           scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes
         }
       },
+      prefill: {
+        username: 'MutationObserver' in window ? Math.round((Math.pow(36,12+1)-Math.random()*Math.pow(36,12))).toString(36).slice(1) : '' // length: 12
+      },
       theme: {
         logo: 'https://www.redeye.se/assets/new_assets/images/auth0/logo.svg',
         primaryColor: '#FC6F77'
@@ -34,14 +37,71 @@
 
 
     // apply an anchor on the logo
+    // (function() {
+    //   lock.on('show', function() {
+    //     var el = document.querySelector('.auth0-lock-header-logo');
+    //     if(el) {
+    //       el.outerHTML = '<a href="https://www.redeye.se/" title="Go to homepage" aria-label="Go to homepage">'+el.outerHTML+'</a>'
+    //     }
+    //   });
+    // })();
+
+
+    // username input visibility toggling
     (function() {
-      lock.on('show', function() {
-        var el = document.querySelector('.auth0-lock-header-logo');
-        if(el) {
-          el.outerHTML = '<a href="https://www.redeye.se/" title="Go to homepage" aria-label="Go to homepage">'+el.outerHTML+'</a>'
+      if(!('MutationObserver' in window))
+        return;
+
+      var isEmpty = false;
+
+      // detects if the username input was cleared on the sign-in form
+      lock.on('signin ready', function() {
+        var mutObserver = new MutationObserver(function() {
+          if(document.querySelector('.auth0-lock-quiet')) {
+            mutObserver.disconnect();
+            var inputEl = document.querySelector('.auth0-lock-input[name=username]');
+            if(inputEl) {
+              inputEl.value = '';
+            }
+          }
+        });
+        mutObserver.observe(
+          document.querySelector('.auth0-lock-container'),
+          {childList: true, subtree: true}
+        );
+
+        var inputEl = document.querySelector('.auth0-lock-input[name=username]');
+        if(inputEl) {
+          inputEl.addEventListener('keyup', function() {
+            isEmpty = inputEl.value.replace(/\s/g,'') == '';
+          });
+          setTimeout(function() { inputEl.value = ''; }, 20);
+        }
+      });
+
+      // visually hides the username input on sign-up form if needed
+      lock.on('signup ready', function() {
+        var inputEl = document.querySelector('.auth0-lock-input[name=username]');
+        if(inputEl && !isEmpty) {
+          inputEl.classList.add('rdey-is-hidden');
+          inputEl.setAttribute('tabindex', '-1');
+
+          // displays the username field in case of username error
+          var mutObserver = new MutationObserver(function() {
+            var errEl = document.querySelector('.auth0-global-message-error');
+            if(errEl && errEl.textContent.indexOf('username') !== -1) {
+              mutObserver.disconnect();
+              inputEl.classList.remove('rdey-is-hidden');
+            }
+          });
+          mutObserver.observe(
+            document.querySelector('.auth0-lock-container'),
+            {childList: true, subtree: true}
+          );
         }
       });
     })();
+
 
     // prevent ios zoom on input focus
     (function() {
@@ -59,6 +119,7 @@
         }
         viewportEl.setAttribute('content', nozoomVal);
       });
+
       lock.on('hide', function() {
         if(defaultVal) {
           viewportEl.setAttribute('content', defaultVal);
