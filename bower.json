@@ -1,6 +1,6 @@
 {
   "name": "auth0-frontend",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "src/styles/main.scss",
   "private": true,
   "ignore": [
